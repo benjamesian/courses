@@ -27,6 +27,10 @@ The instructor's introduction to this course highlights the importance of JavaSc
 - preview of advantages React offers over pure HTML+JS or even jQuery
 - I didn't really learn anything new in this section, but I now especially look forward to learning all about styling, testing, and debugging practices in React
 
+## ![section][section-icon] Section 2: Refreshing Next Generation JavaScript
+
+I skipped this section as I am comfortable with my knowledge of modern JS feaures.
+
 ## ![section][section-icon] Section 3: Understanding the Base Features & Syntax
 
 28: **public** folder is basically the root folder that gets served by the web server. There should only be one html document in the public folder (index.html). For a multipage app you would run create-react-app multiple times. Building the project injects compiled stuff into the index.html. In **index.html** you likely only want to edit the head section (linking, title, ...). **manifest.json** has something to do with PWAs. **registerServiceWorker.js** is also related to PWAs ("it will basically pre-cache our script files"). **App.test.js** will be used for unit testing.
@@ -72,6 +76,19 @@ The instructor's introduction to this course highlights the importance of JavaSc
 
 - unlike angular and vue, React is a just a library and relies on pure JS features over directives provided by a framework
 - be careful to never directly modify state (pay close attention to references)
+
+## ![section][section-icon] Section 5: Styling React Components & Elements
+
+66: when using a style object for inline styling objects remember that this object can be manipulated with JS just like any other object
+
+68: Radium package allows you to use pseudo selectors and media queries when generating styles in JS (inline styles)
+
+70: styled-components is an alternative to Radium
+
+### ![recap][recap-icon] S5 Recap
+
+- maps that generate arrays of JSX are not like regular arrays, you cannot call length on them directly, prefer working with underlying state data to JSX data stored in variables
+- inline-styling can be changed dynamically with JS
 
 [//]: # "logos used"
 
