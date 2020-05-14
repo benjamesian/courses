@@ -1,12 +1,29 @@
 import React, { Component } from "react";
 import "./App.css";
+import styled from "styled-components";
+// import Radium, { StyleRoot } from "radium";
 import Person from "./Person/Person";
+
+const StyledButton = styled.button`
+  background-color: ${props => props.hov ? "red" : "green"};
+  color: white;
+  font: inherit;
+  border: 1px solid blue;
+  padding: 8px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: ${props => props.hov ? "salmon" : "lightgreen"};
+    color: black;
+  }
+`;
 
 class App extends Component {
   state = {
     persons: [
       { id: "a", name: "Ben", inner: "" },
       { id: "b", name: "Carl", inner: "Nested Text" },
+      { id: "c", name: "Egret", inner: "Nested" },
     ],
     showPersons: false,
   };
@@ -29,40 +46,66 @@ class App extends Component {
   };
 
   render() {
-    const style = {
-      backgroundColor: "white",
-      font: "inherit",
-      border: "1px solid blue",
-      padding: "8px",
-      cursor: "pointer",
-    };
+    // const style = {
+    //   backgroundColor: "green",
+    //   color: "white",
+    //   font: "inherit",
+    //   border: "1px solid blue",
+    //   padding: "8px",
+    //   cursor: "pointer",
+    //   ":hover": {
+    //     backgroundColor: "lightgreen",
+    //     color: "black",
+    //   },
+    // };
 
-    const persons = this.state.showPersons ? (
-      <div>
-        {this.state.persons.map((person, i) => (
-          <Person
-            key={person.id}
-            name={person.name}
-            click={this.deletePersonHandler.bind(this, i)}
-            changed={(event) => this.nameChangedHandler(event, person.id)}
-          >
-            {person.inner}
-          </Person>
-        ))}
-      </div>
-    ) : null;
+    let persons = null;
+    if (this.state.showPersons) {
+      persons = (
+        <div>
+          {this.state.persons.map((person, i) => (
+            <Person
+              key={person.id}
+              name={person.name}
+              click={this.deletePersonHandler.bind(this, i)}
+              changed={(event) => this.nameChangedHandler(event, person.id)}
+            >
+              {person.inner}
+            </Person>
+          ))}
+        </div>
+      );
+      // style.backgroundColor = "red";
+      // style[":hover"] = {
+      //   backgroundColor: "salmon",
+      //   color: "black",
+      // };
+    }
+
+    const classes = [];
+    if (this.state.persons.length < 3) {
+      classes.push("red");
+    }
+    if (this.state.persons.length < 2) {
+      classes.push("bold");
+    }
 
     return (
+      // <StyleRoot>
+      //  StyleRoot needed for radium with media queries, keyframes (maybe other things too)
       <div className="App">
         <h1>Hi, I'm a React App</h1>
-        <button style={style} onClick={this.togglePersonsHandler}>
+        <p className={classes.join(" ")}>haha</p>
+        <StyledButton hov={this.state.showPersons} onClick={this.togglePersonsHandler}>
           Toggle Person List Visibility
-        </button>
+        </StyledButton>
         {persons}
       </div>
+      // </StyleRoot>
     );
     // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, "Hi, I'm a React App"));
   }
 }
 
+// export default Radium(App);
 export default App;
