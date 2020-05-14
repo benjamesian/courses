@@ -12,10 +12,8 @@ const person = (props) => {
         I'm {props.name}, here is a random number:{" "}
         {Math.floor(Math.random() * 100)}!
       </p>
-      <p>
-        <h3 style={style} onClick={props.click}>
-          Click Here!
-        </h3>
+      <p style={style} onClick={props.click}>
+        Click Here!
       </p>
       <p>{props.children}</p>
       <input type="text" onChange={props.changed} value={props.name} />

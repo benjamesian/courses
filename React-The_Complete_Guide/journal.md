@@ -32,7 +32,6 @@ The instructor's introduction to this course highlights the importance of JavaSc
 28: **public** folder is basically the root folder that gets served by the web server. There should only be one html document in the public folder (index.html). For a multipage app you would run create-react-app multiple times. Building the project injects compiled stuff into the index.html. In **index.html** you likely only want to edit the head section (linking, title, ...). **manifest.json** has something to do with PWAs. **registerServiceWorker.js** is also related to PWAs ("it will basically pre-cache our script files"). **App.test.js** will be used for unit testing.
 
 32: intro to creating components
-
 - components are often named starting with uppercase letters to avoid collision with actual HTML elements
 
 37: the special `props.children` prop refers to any elements/components nested in a custom component.
@@ -47,7 +46,7 @@ The instructor's introduction to this course highlights the importance of JavaSc
 
 49: it is common (though not necessarily preferred) in React applications to use inline styling. Perhaps this makes sense as React follows DRY principles. It is more difficult to apply styles to states like :hover when using inline styling.
 
-### ![recap][recap-icon] S2 Recap
+### ![recap][recap-icon] S3 Recap
 
 - create-react-app takes care of build workflow
 	- sets up npm, webpack, babel, dev server
@@ -58,6 +57,21 @@ The instructor's introduction to this course highlights the importance of JavaSc
 - inline styles allow for scoping styles to a component
 	- use html style attribute
 	- popular as there is less code repetition (which makes inline styling unpleasant in HTML)
+
+## ![section][section-icon] Section 4: Working with Lists and Conditionals
+
+53: ternary operator can be used in JSX sections wrapped in `{}` to conditionally show content.  `null` in JSX renders nothing
+
+54: JSX can be stored in variables in the render method and later used in the returned JSX.  This helps keep the returned JSX clean and makes it easier to see logic used in generating parts of the JSX.  For example, sections of JSX that are conditionally rendered are typically handled this way.
+
+59: Using key property on lists of JSX allows React to avoid having to re-render the entire list if only one element changes!
+- list index is a bad key, key should be something unique to the list element that will not change
+	- list index is still better than no key
+
+### ![recap][recap-icon] S4 Recap
+
+- unlike angular and vue, React is a just a library and relies on pure JS features over directives provided by a framework
+- be careful to never directly modify state (pay close attention to references)
 
 [//]: # "logos used"
 
