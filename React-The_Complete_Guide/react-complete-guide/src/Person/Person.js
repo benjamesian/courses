@@ -1,5 +1,5 @@
 import React from "react";
-import "./Person.css";
+import classes from "./Person.css";
 
 const person = (props) => {
   const style = {
@@ -7,7 +7,7 @@ const person = (props) => {
   };
 
   return (
-    <div className="Person">
+    <div className={classes.Person}>
       <p>
         I'm {props.name}, here is a random number:{" "}
         {Math.floor(Math.random() * 100)}!

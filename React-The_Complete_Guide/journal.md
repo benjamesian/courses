@@ -85,10 +85,13 @@ I skipped this section as I am comfortable with my knowledge of modern JS feaure
 
 70: styled-components is an alternative to Radium
 
+73: CSS Modules is yet another alternative for styling.  It is preferred by the instructor as it allows you to keep css rules in CSS files and still dynamically change styles
+
 ### ![recap][recap-icon] S5 Recap
 
 - maps that generate arrays of JSX are not like regular arrays, you cannot call length on them directly, prefer working with underlying state data to JSX data stored in variables
 - inline-styling can be changed dynamically with JS
+- 3rd party packages (and CSS Modules) exist to help with dynamically styling components and scoping styles
 
 [//]: # "logos used"
 
