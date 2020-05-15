@@ -93,6 +93,14 @@ I skipped this section as I am comfortable with my knowledge of modern JS feaure
 - inline-styling can be changed dynamically with JS
 - 3rd party packages (and CSS Modules) exist to help with dynamically styling components and scoping styles
 
+## ![section][section-icon] Section 6: Debugging React Apps
+
+81: ErrorBoundary pattern.  Use to wrap code you expect might fail.  Marks up errors that users might see, only component that threw error will not render properly!
+
+### ![recap][recap-icon] S6 Recap
+
+- Components tab in dev tools is useful for inspecting app state dynamically
+
 [//]: # "logos used"
 
 [section-icon]: https://img.icons8.com/nolan/64/bookmark-ribbon.png "Section"
